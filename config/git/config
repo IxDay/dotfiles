@@ -1,0 +1,7 @@
+[user]
+	name = Maxime Vidori
+	email = maxime.vidori@gmail.com
+[core]
+	editor = nvim
+[push]
+	default = simple

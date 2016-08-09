@@ -1,0 +1,8 @@
+#!/bin/bash
+cmd="tmux -q has-session && exec tmux attach-session -d || \
+  exec tmux  -f $XDG_CONFIG_HOME/tmux/tmux.conf new-session -n$USER -s$USER@$HOSTNAME"
+
+(urxvt -geometry 210x1600 -e bash -c "$cmd" &)
+sleep 0.5
+window=$(wmctrl -l | awk 'END{print $1}')
+wmctrl -ir "$window" -b add,maximized_vert,maximized_horz
