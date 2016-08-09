@@ -17,7 +17,7 @@ then
     export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
 fi
 
-if [[ -d "$HOME/.config/zsh" ]] 
+if [[ -d "$HOME/.config/zsh" ]]
 then
     export ZDOTDIR="$HOME/.config/zsh"
 fi
