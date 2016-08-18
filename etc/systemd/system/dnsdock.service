@@ -1,0 +1,12 @@
+[Unit]
+Description=Docker DNS service
+Documentation=https://github.com/tonistiigi/dnsdock/blob/master/readme.md
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker run --rm -v /var/run/docker.sock:/var/run/docker.sock --name dnsdock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock:amd64-1.13.1
+ExecStartPost=/bin/sleep 3
+ExecStartPost=/usr/bin/curl http://dnsdock.docker/services/dns -X PUT --data-ascii \
+  '{"name": "psyduck", "image": "debian", "ip": "172.17.0.1", "ttl": 30}'
+ExecStop=/usr/bin/docker stop dnsdock
