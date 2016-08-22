@@ -5,6 +5,7 @@ all: config etc home local
 define buildlinks =
 @for file in $(shell find $(1) -maxdepth 1 ! -path $(1) ! -name ".*.swp"); do \
 	f=$$(basename $$file); \
+	mkdir -p $$(dirname $$f); \
 	ln -sfn $$file $(2)$$f; \
 done
 endef
