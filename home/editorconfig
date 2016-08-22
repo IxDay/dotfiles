@@ -6,17 +6,12 @@ charset = utf-8
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
+indent_size = 4
+indent_style = tab
 
+[*.py]
+indent_style = space
+
+[*.{js,pp,go,yml,yaml}]
 indent_style = space
 indent_size = 2
-
-# 4 space indentation
-[*.py]
-indent_size = 4
-
-[Makefile]
-indent_style = tab
-
-# Tab indentation (no size specified)
-[*.{sh,md}]
-indent_style = tab
