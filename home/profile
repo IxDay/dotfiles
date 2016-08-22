@@ -15,11 +15,6 @@ if [ -n "$BASH_VERSION" ]; then
     . "$HOME/.bashrc"
   fi
 fi
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.bin" ]
-then
-  PATH="$HOME/.bin:$PATH"
-fi
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -42,3 +37,16 @@ export GEM_SPEC_CACHE="$GEM_HOME/specs"
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
 export MPLAYER_HOME="$XDG_CONFIG_HOME/mplayer"
 export PGPASSFILE="$XDG_CONFIG_HOME/pgsql/pgpass"
+export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.bin" ]
+then
+  PATH="$HOME/.bin:$PATH"
+fi
+
+# add ruby gem bin dir to path if it exists
+if [ -d "$HOME/.bin" ]
+then
+  PATH="$GEM_PATH/bin:$PATH"
+fi
