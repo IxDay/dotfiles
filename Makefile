@@ -2,6 +2,9 @@
 
 all: config etc home local
 
+XDG_CONFIG_HOME ?= "$(HOME)/.config/"
+XDG_DATA_HOME ?= "$(HOME)/.local/share/"
+
 define buildlinks =
 @for file in $(shell find $(1) -maxdepth 1 ! -path $(1) ! -name ".*.swp"); do \
 	f=$$(basename $$file); \
@@ -11,12 +14,12 @@ done
 endef
 
 config:
-	@echo "Link files from ./config/ dir to related $$HOME/.config/..."
-	$(call buildlinks,$(CURDIR)/config,$(HOME)/.config/)
+	@echo "Link files from ./config/ dir to related $(XDG_CONFIG_HOME)/..."
+	$(call buildlinks,$(CURDIR)/config,$(XDG_CONFIG_HOME))
 
 local:
-	@echo "Link files from ./config/ dir to related $$HOME/.local/share/..."
-	$(call buildlinks,$(CURDIR)/local,$(HOME)/.local/share/)
+	@echo "Link files from ./config/ dir to related $(XDG_DATA_HOME)/..."
+	$(call buildlinks,$(CURDIR)/local,$(XDG_DATA_HOME))
 
 home:
 	@echo "Link files from ./home/ dir to related $$HOME/..."
