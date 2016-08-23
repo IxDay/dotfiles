@@ -10,3 +10,6 @@ ExecStartPost=/bin/sleep 3
 ExecStartPost=/usr/bin/curl http://dnsdock.docker/services/dns -X PUT --data-ascii \
   '{"name": "psyduck", "image": "debian", "ip": "172.17.0.1", "ttl": 30}'
 ExecStop=/usr/bin/docker stop dnsdock
+
+[Install]
+WantedBy=multi-user.target
