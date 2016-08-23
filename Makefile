@@ -8,17 +8,18 @@ XDG_DATA_HOME ?= "$(HOME)/.local/share/"
 define buildlinks =
 @for file in $(shell find $(1) -maxdepth 1 ! -path $(1) ! -name ".*.swp"); do \
 	f=$$(basename $$file); \
-	mkdir -p $$(dirname $$f); \
 	ln -sfn $$file $(2)$$f; \
 done
 endef
 
 config:
-	@echo "Link files from ./config/ dir to related $(XDG_CONFIG_HOME)/..."
+	@echo "Link files from ./config/ dir to related $(XDG_CONFIG_HOME)..."
+	@mkdir -p $(XDG_CONFIG_HOME)
 	$(call buildlinks,$(CURDIR)/config,$(XDG_CONFIG_HOME))
 
 local:
-	@echo "Link files from ./config/ dir to related $(XDG_DATA_HOME)/..."
+	@echo "Link files from ./config/ dir to related $(XDG_DATA_HOME)..."
+	@mkdir -p $(XDG_DATA_HOME)
 	$(call buildlinks,$(CURDIR)/local,$(XDG_DATA_HOME))
 
 home:
