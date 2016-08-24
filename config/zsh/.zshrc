@@ -114,11 +114,4 @@ explorer() {
 alias ls="ls --color"
 alias sudo="sudo -E"
 alias svim="sudo -E nvim"
-alias vim="nvim"
 alias docker_ip="docker inspect -f '{{.NetworkSettings.IPAddress}}'"
-alias compose="source $XDG_DATA_HOME/compose/bin/activate"
-alias dev_42_sync="inotifywatch -o -e .git/ -e .pyc . | \
-  xargs -0 -I {} rsync -avz -e \"ssh\" . \
-  d-clspor-0000.adm.dev42.aub.cloudwatt.net:/home/mvidori/console_cloudwatt \
-  --exclude-from 'exclude.txt'"
-
