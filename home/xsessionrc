@@ -1,4 +1,6 @@
 # Disable access control on Xserver
 xhost + &>/dev/null
 
+. ~/.config/zsh/.zlogin
+
 PATH="$XDG_DATA_HOME/bin:$PATH"
