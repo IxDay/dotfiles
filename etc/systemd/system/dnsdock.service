@@ -5,8 +5,7 @@ After=docker.service
 Requires=docker.service
 
 [Service]
-ExecStartPre=/usr/bin/docker ps -aq --filter name=dnsdock|\
-             /usr/bin/xargs -r /usr/bin/docker rm
+ExecStartPre=-/usr/bin/docker rm $(/usr/bin/docker ps -aq --filter \"name=dnsdock\")
 ExecStart=/usr/bin/docker run --rm -v /var/run/docker.sock:/var/run/docker.sock --name dnsdock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock:amd64-1.13.1
 ExecStartPost=/bin/sleep 3
 ExecStartPost=/usr/bin/curl http://dnsdock.docker/services/dns -X PUT --data-ascii \

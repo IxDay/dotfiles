@@ -1,0 +1,19 @@
+VISUAL          DEFAULT=vim
+EDITOR          DEFAULT=${VISUAL}
+HOME            DEFAULT=/home/@{PAM_USER}
+
+XDG_CONFIG_HOME DEFAULT=${HOME}/.config
+XDG_DATA_HOME   DEFAULT=${HOME}/.local/share
+XDG_CACHE_HOME  DEFAULT=${HOME}/.cache
+
+GEM_HOME        DEFAULT=${XDG_DATA_HOME}/gem
+GEM_PATH        DEFAULT=${GEM_HOME}
+GEM_SPEC_CACHE  DEFAULT=${GEM_HOME}/specs
+
+GOPATH          DEFAULT=${HOME}/documents/development/go/workspace
+
+IPYTHONDIR      DEFAULT=${XDG_CONFIG_HOME}/ipython
+VAGRANT_HOME    DEFAULT=${XDG_DATA_HOME}/vagrant
+GNUPGHOME       DEFAULT=${XDG_CONFIG_HOME}/gnupg
+
+PATH            DEFAULT=@GOPATH/bin:/usr/lib/go/bin:/usr/local/bin:/usr/bin:/bin
