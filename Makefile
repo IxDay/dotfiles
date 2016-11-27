@@ -1,6 +1,6 @@
 .PHONY: all config etc home local
 
-all: config etc home local
+all: config home local
 
 XDG_CONFIG_HOME ?= "$(HOME)/.config"
 XDG_DATA_HOME ?= "$(HOME)/.local/share"
