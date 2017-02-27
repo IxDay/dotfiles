@@ -12,7 +12,6 @@ export GEM_SPEC_CACHE="$GEM_HOME/specs"
 export GOPATH=$HOME/documents/dev/go/workspace
 
 # move everything to the $HOME/.config or $HOME/.local folder \o/
-export XAUTHORITY="$XDG_RUNTIME_DIR/X11/xauthority"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export VAGRANT_HOME="$XDG_DATA_HOME/vagrant"
 export HISTFILE="$XDG_DATA_HOME/zsh/history"

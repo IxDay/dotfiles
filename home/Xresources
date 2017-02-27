@@ -89,3 +89,8 @@ URxvt.tabbed.title: no
 
 !URxvt.loginShell: true
 
+URxvt*depth: 32
+URxvt*background: rgba:2300/2200/1e00/f400
+URxvt.internalBorder:  6
+URxvt*.cutchars: "()*,;<>[]{}|`\"'#│'`"
+
