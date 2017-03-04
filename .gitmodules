@@ -7,6 +7,6 @@
 [submodule "config/tmux/plugins/tpm"]
 	path = config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "home/oh-my-zsh"]
-	path = home/oh-my-zsh
-	url = https://github.com/IxDay/oh-my-zsh
+[submodule "config/zsh"]
+	path = config/zsh
+	url = git@github.com:IxDay/zsh.git
