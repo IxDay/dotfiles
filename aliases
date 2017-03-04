@@ -1,0 +1,18 @@
+server () {
+    if [[ -z "$1" ]]
+    then
+        python -m SimpleHTTPServer
+    elif [[ "$1" -lt 1024 ]]
+    then
+        sudo python -m SimpleHTTPServer "$1"
+    else
+        python -m SimpleHTTPServer "$1"
+    fi
+}
+
+
+alias sudo="sudo -E"
+alias svim="sudo -E vim"
+alias ssh-add-def="ssh-add $HOME/.ssh/id_rsa"
+alias ssh-add-cw="ssh-add $HOME/.ssh/id_rsa_cw"
+

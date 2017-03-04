@@ -1,4 +1,0 @@
-# Disable access control on Xserver
-xhost + &>/dev/null
-
-PATH="$XDG_DATA_HOME/bin:$PATH"

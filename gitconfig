@@ -1,0 +1,14 @@
+[user]
+	name = Maxime Vidori
+	email = maxime.vidori@gmail.com
+[core]
+	excludesfile = /home/max/.gitignore_global
+	editor = vim
+[color]
+	ui = always
+[push]
+  default = matching
+[gitreview]
+	username = MaxV
+[credential]
+	helper = cache --timeout=3600

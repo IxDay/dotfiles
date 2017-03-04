@@ -1,4 +1,0 @@
-#!/bin/bash
-
-java -jar "$XDG_DATA_HOME/minecraft/minecraft.jar" \
-  --workDir "$XDG_DATA_HOME/minecraft"

@@ -1,3 +1,0 @@
-#!/bin/sh
-tmux -q has-session && exec tmux attach-session -d || \
-  exec tmux  -f $HOME/.config/tmux/tmux.conf new-session -n$USER -s$USER@$HOSTNAME
