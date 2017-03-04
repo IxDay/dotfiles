@@ -1,4 +1,4 @@
-## dotfiles
+# Dotfiles
 
 Inspired by [Jessie Frazelle dofiles](https://github.com/jfrazelle/dotfiles),
 this repo contains some config files for my laptop.
@@ -11,6 +11,7 @@ Some packages are needed in order to have this working, here is a list:
 - zsh
 - tmux
 - xclip
+- xdg-open
 
 **To install:**
 
@@ -21,11 +22,11 @@ $ make
 
 This will create symlinks from this repo to your home folder.
 
-**To customize:**
 
-No support for customization yet.
+## Development
 
-#### `.vim`
+You can download git submodules recursively with the following command:
 
-For my `.vimrc` and `.vim` dotfiles see
-[github.com/IxDay/.vim](https://github.com/IxDay/.vim).
+```console
+$ git submodule update --init --recursive
+```
