@@ -67,7 +67,7 @@ Xft.antialias:  true
 
 !enabling clickable links:
 URxvt.perl-ext-common:  default,matcher
-URxvt.urlLauncher:      /usr/bin/firefox
+URxvt.urlLauncher:      /usr/bin/xdg-open
 URxvt.matcher.button:   1
 
 !urxvt scrolling options and cursor style:
