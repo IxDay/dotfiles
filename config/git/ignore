@@ -6,4 +6,5 @@ venv
 *.pyc
 *.egg-info
 htmlcov
-
+.direnv
+.envrc
