@@ -1,0 +1,70 @@
+#!/bin/sh
+
+read -r -d '' USAGE << EOF
+Usage: $(basename $0) [OPTIONS]... latexfile
+Build
+
+OPTIONS:
+	-o	<out_file> change output name to out_file.pdf
+	-h	display this help and exit
+	-w	run the mklatex command with the -pvc option (watching change)
+EOF
+
+read -r -d ´´ DEFAULT << EOF
+\documentclass{article}
+
+\usepackage{geometry}
+\geometry{
+	margin=0.5in,
+	bottom=1in
+}
+
+\title{Foo Bar}
+\author{Me}
+\date{\today}
+
+\begin{document}
+\maketitle
+\end{document}
+EOF
+
+function main() {
+	OPTIND=0
+	local options=""
+	while getopts ":who:" OPTION
+	do
+		case $OPTION in
+			w)
+				# beware you need local here otherwise strange behavior appears
+				options="$options -pvc"
+				;;
+			o)
+				options="$options -jobname=$OPTARG"
+				;;
+			h)
+				echo "$USAGE"
+				return 0
+				;;
+			:)
+				echo "Option -$OPTARG requires an argument." >&2
+				exit 1
+				;;
+			\?)
+				echo "Invalid option '-$OPTARG'"
+				echo ""
+				echo "$USAGE"
+				return 1
+				;;
+		esac
+	done
+
+	# Remove options from arguments
+	shift $((OPTIND-1))
+	[ -z ${1+x} ] && echo "You must specify a tex file" && return 1
+	[ "${1##*.}" != "tex" ] && echo "The file must have a .tex extension"
+	[ ! -e "${1}" ] && echo "$DEFAULT" > $1
+
+	latexmk ${options} -pdf -use-make -output-directory=bin -xelatex "$1"
+}
+
+main "$@"
