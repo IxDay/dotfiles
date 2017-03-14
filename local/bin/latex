@@ -19,6 +19,21 @@ read -r -d ´´ DEFAULT << EOF
 	bottom=1in
 }
 
+\usepackage{titlesec}
+\usepackage{fontspec}
+\usepackage{titling}
+
+\setmainfont[Ligatures=TeX]{Lato Regular}
+\newfontfamily\headingfont[Scale=1.4]{Oswald Regular}
+\titleformat*{\section}{\large\headingfont}
+
+\renewcommand{\maketitlehooka}{\headingfont}
+\posttitle{\end{center}\hrulefill}
+\preauthor{\begin{center}}
+\postauthor{\end{center}}
+\predate{\begin{flushright}\small}
+\postdate{\end{flushright}}
+
 \title{Foo Bar}
 \author{Me}
 \date{\today}
