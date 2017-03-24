@@ -33,4 +33,5 @@ etc:
 		sudo mkdir -p $$(dirname $$f); \
 		sudo ln -f $$file $$f; \
 	done
+	systemctl --user daemon-reload
 	sudo systemctl daemon-reload
