@@ -79,7 +79,7 @@ function main() {
 	[ "${1##*.}" != "tex" ] && echo "The file must have a .tex extension"
 	[ ! -e "${1}" ] && echo "$DEFAULT" > $1
 
-	latexmk ${options} -pdf -use-make -output-directory=bin -xelatex "$1"
+	latexmk ${options} -shell-escape -pdf -use-make -output-directory=build -xelatex "$1"
 }
 
 main "$@"

@@ -1,4 +1,8 @@
-\RequirePackage{tikz, datetime, textpos, fontspec}
+\RequirePackage{tikz, datetime, textpos, fontspec, etoolbox}
+
+\BeforeBeginEnvironment{Verbatim}{\begingroup\color{black}}%
+\AfterEndEnvironment{Verbatim}{\endgroup}%
+
 
 \usefonttheme{serif}
 \setmainfont{Lato Regular}
@@ -16,12 +20,14 @@
 \definecolor{GreyLight}{HTML}{f5f5f5}
 
 
-\setbeamercolor*{frame}{bg=GreyLight}
+\setbeamercolor*{normal text}{fg=Grey, bg=white}
 \setbeamercolor*{title}{fg=Grey}
 \setbeamercolor*{item}{fg=Green}
 \setbeamercolor*{frametitle}{fg=Grey}
 \setbeamercolor*{block title}{fg=white, bg=Green}
 \setbeamercolor*{block body}{fg=Grey, bg=GreenLight}
+\setbeamercolor*{block title example}{fg=white, bg=Green}
+\setbeamercolor*{block body example}{fg=Grey, bg=GreenLight}
 \setbeamercolor*{section in toc}{fg=black}
 \setbeamercolor*{section page}{fg=white}
 
