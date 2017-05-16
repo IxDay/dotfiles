@@ -25,8 +25,7 @@ sub-bg-color="0"         # black to white
 subfont-text-scale="3.7" # truetype font scaling
 subfont-blur="1"         # Sligh t blur
 
-#This sets the postprocessing into overdrive using all possible spare cpu cycles to make the movie look
-better
+# This sets the postprocessing into overdrive using all possible spare cpu cycles to make the movie look better
 autoq=100
 vf=pp=de,hqdn3d
 
