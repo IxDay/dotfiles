@@ -1,4 +1,4 @@
-\RequirePackage{tikz, datetime, textpos, fontspec, etoolbox}
+\RequirePackage{tikz, datetime2, textpos, fontspec, etoolbox}
 
 \BeforeBeginEnvironment{Verbatim}{\begingroup\color{black}}%
 \AfterEndEnvironment{Verbatim}{\endgroup}%
@@ -11,7 +11,9 @@
 \newfontfamily\headingboldfont[Scale=1.4]{Oswald Bold}
 
 \ProcessOptions
-\yyyymmdddate \renewcommand{\dateseparator}{.}
+
+%\yyyymmdddate \renewcommand{\dateseparator}{.}
+%\setbeamercolor{year}{fg=blue}
 
 
 \definecolor{Green}{HTML}{00e5ba}
@@ -39,13 +41,27 @@
 \setbeamertemplate{itemize item}{\tikz{\draw[color=Green, semithick] rectangle(.2,.2);}}
 \setbeamertemplate{itemize subitem}{\tikz{\draw[color=Grey, ultra thick] rectangle(.2,.2);}}
 \setbeamertemplate{sections/subsections in toc}[square]
-
+\DTMnewdatestyle{dashdate}{%
+	\renewcommand{\DTMdisplaydate}[4]{%
+		\DTMtwodigits{##3}.\DTMtwodigits{##2}{\color{Green}.}\number##1
+	}%
+	\renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
+}
+\DTMsetdatestyle{dashdate}
 \newenvironment{xplainframe}{
     \bgroup\setbeamertemplate{background}{}
     \begin{frame}[plain]
 }{
     \end{frame}
     \egroup
+}
+
+
+\renewenvironment{quote}[2]{
+		\textit{#1}\\
+		[1ex]
+		\rightline{{\rm --- #2}}\\
+		[1ex]
 }
 
 \setbeamertemplate{background}{
