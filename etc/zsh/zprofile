@@ -1,0 +1,2 @@
+# follow archlinux philosophy and just source the /etc/profile file
+emulate sh -c 'source /etc/profile'

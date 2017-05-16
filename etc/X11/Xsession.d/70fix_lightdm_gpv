@@ -1,0 +1,9 @@
+# https://superuser.com/questions/881102/etc-profile-not-being-sourced-at-login#answer-909236
+# GPV: 2-May-2015, lightdm + cinnamon forgets to source ANY profiles!!
+
+# First read /etc/profile and .profile
+test -f /etc/profile && . /etc/profile
+test -f "$HOME/.profile" && . "$HOME/.profile"
+# Second read /etc/xprofile and .xprofile for X specific setup
+test -f /etc/xprofile && . /etc/xprofile
+test -f "$HOME/.xprofile" && . "$HOME/.xprofile"
