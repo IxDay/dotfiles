@@ -2,3 +2,5 @@ xrdb -load "$XDG_CONFIG_HOME/X11/xresources"
 
 export MPLAYER_HOME="$XDG_CONFIG_HOME/mplayer"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" # not working right now
+export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/nv"
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
