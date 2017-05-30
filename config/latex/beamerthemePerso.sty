@@ -64,16 +64,55 @@
 		[1ex]
 }
 
+\newcommand\ifratio[3]{%
+  \ifnum#1=169%
+  \ifdim\beamer@paperwidth=16.00cm\relax%
+    \ifdim\beamer@paperheight=9.00cm\relax%
+      #2%
+    \else%
+      #3%
+    \fi%
+  \else%
+    #3%
+  \fi%
+\else%
+  \ifnum#1=43%
+    \ifdim\beamer@paperwidth=12.80cm\relax%
+      \ifdim\beamer@paperheight=9.60cm\relax%
+        #2%
+      \else%
+        #3%
+      \fi%
+    \else%
+      #3%
+    \fi%
+  \fi%
+\fi%
+}
+
 \setbeamertemplate{background}{
   \begin{tikzpicture}
-  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
-  \ifnum\thepage>1\relax% Not the title page
-	    \fill[color=Green] (0,8.3) rectangle(0.8,8.4);
-	    \fill[color=Grey] (0.9,8.3) rectangle(\the\paperwidth, 8.4);
-  \else% Title page
-        \fill[color=Green] (0,5.7) rectangle(0.8,5.8);
-	    \fill[color=Grey] (0.9,5.7) rectangle(\the\paperwidth,5.8);
-  \fi
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \ifnum\thepage>1\relax% Not the title page
+    \ifratio{169}{
+      \fill[color=Green] (0,7.7) rectangle(0.8,7.8);
+      \fill[color=Grey] (0.9,7.7) rectangle(\the\paperwidth, 7.8);
+    }{}
+    \ifratio{43}{
+      \fill[color=Green] (0,8.3) rectangle(0.8,8.4);
+      \fill[color=Grey] (0.9,8.3) rectangle(\the\paperwidth, 8.4);
+    }{}
+    \else% Title page
+    \ifratio{169}{
+      \fill[color=Green] (0,5.3) rectangle(0.8,5.4);
+      \fill[color=Grey] (0.9,5.3) rectangle(\the\paperwidth,5.4);
+    }{}
+    \ifratio{43}{
+      \fill[color=Green] (0,5.7) rectangle(0.8,5.8);
+         \fill[color=Grey] (0.9,5.7) rectangle(\the\paperwidth,5.8);
+
+       }{}
+    \fi
   \end{tikzpicture}
 }
 \addtobeamertemplate{block begin}{}{ \vskip2mm }
