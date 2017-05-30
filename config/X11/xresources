@@ -61,8 +61,8 @@
 Xft.dpi:        96
 Xft.antialias:  true
 
-*font:          xft:inconsolata for powerline:pixelsize=35
-*boldFont:      xft:inconsolata for powerline:pixelsize=35
+*font:          xft:inconsolata for powerline:pixelsize=15
+*boldFont:      xft:inconsolata for powerline:pixelsize=15
 
 
 !enabling clickable links:
@@ -87,7 +87,7 @@ URxvt.tabbed.autohide:  yes
 URxvt.tabbed.new-button:  no
 URxvt.tabbed.title: no
 
-URxvt.loginShell: true
+!URxvt.loginShell: true
 
 URxvt*depth: 32
 URxvt*background: rgba:2300/2200/1e00/f400
