@@ -30,3 +30,11 @@ You can download git submodules recursively with the following command:
 ```console
 $ git submodule update --init --recursive
 ```
+
+## Update submodules
+
+To update submodules of this project run:
+
+```console
+$ git submodule update --rebase --remote
+```
