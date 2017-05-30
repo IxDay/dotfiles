@@ -87,7 +87,7 @@ URxvt.tabbed.autohide:  yes
 URxvt.tabbed.new-button:  no
 URxvt.tabbed.title: no
 
-!URxvt.loginShell: true
+URxvt.loginShell: true
 
 URxvt*depth: 32
 URxvt*background: rgba:2300/2200/1e00/f400
