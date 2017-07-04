@@ -39,7 +39,11 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{items}[square]
 \setbeamertemplate{itemize item}{\tikz{\draw[color=Green, semithick] rectangle(.2,.2);}}
-\setbeamertemplate{itemize subitem}{\tikz{\draw[color=Grey, ultra thick] rectangle(.2,.2);}}
+\setbeamertemplate{itemize subitem}{\tikz{\draw[color=Green, semithick] circle(.1);}}
+\makeatletter
+\g@addto@macro\@listii{\itemsep2pt }
+  \makeatletter
+
 \setbeamertemplate{sections/subsections in toc}[square]
 \DTMnewdatestyle{dashdate}{%
 	\renewcommand{\DTMdisplaydate}[4]{%
