@@ -9,3 +9,6 @@ htmlcov
 .direnv
 .envrc
 .sync.lock
+.idea
+.gradle
+*.iml
