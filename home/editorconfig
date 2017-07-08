@@ -12,6 +12,6 @@ indent_style = tab
 [*.py]
 indent_style = space
 
-[*.{js,pp,go,yml,yaml,tex,toml,sql,sty}]
+[*.{js,pp,go,yml,yaml,tex,toml,sql,sty,json,html,vue}]
 indent_style = space
 indent_size = 2
