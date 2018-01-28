@@ -12,3 +12,7 @@ htmlcov
 .idea
 .gradle
 *.iml
+.go
+node_modules
+*.sublime-project
+*.sublime-workspace
