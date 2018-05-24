@@ -12,15 +12,29 @@
 
 \ProcessOptions
 
+% https://tex.stackexchange.com/questions/232168/normal-text-is-invisible-when-using-beamer-with-notes-and-xelatex
+\makeatletter
+\def\beamer@framenotesbegin{% at beginning of slide
+     \usebeamercolor[fg]{normal text}
+      \gdef\beamer@noteitems{}%
+      \gdef\beamer@notes{}%
+}
+\makeatother
+
+
 %\yyyymmdddate \renewcommand{\dateseparator}{.}
 %\setbeamercolor{year}{fg=blue}
 
 
 \definecolor{Green}{HTML}{00e5ba}
+\definecolor{GreenDark}{HTML}{038978}
 \definecolor{GreenLight}{HTML}{e4f6f2}
 \definecolor{Grey}{HTML}{555555}
 \definecolor{GreyLight}{HTML}{f5f5f5}
-
+\hypersetup{
+  colorlinks = true,
+  allcolors = GreenDark,
+}
 
 \setbeamercolor*{normal text}{fg=Grey, bg=white}
 \setbeamercolor*{title}{fg=Grey}
@@ -31,10 +45,16 @@
 \setbeamercolor*{block title example}{fg=white, bg=Green}
 \setbeamercolor*{block body example}{fg=Grey, bg=GreenLight}
 \setbeamercolor*{section in toc}{fg=black}
-\setbeamercolor*{section page}{fg=white}
+\setbeamercolor*{section page}{fg=black}
+\setbeamercolor*{alerted text}{fg=Green}
 
 \setbeamerfont{section page}{size=\LARGE}
 \setbeamerfont{frametitle}{family=\headingfont}
+
+\setbeamertemplate{note page}{
+  \pagecolor{white!5}
+  \insertnote
+}
 
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{items}[square]
