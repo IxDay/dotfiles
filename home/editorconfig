@@ -9,9 +9,13 @@ trim_trailing_whitespace = true
 indent_size = 4
 indent_style = tab
 
+[*.sh]
+indent_style = tab
+indent_size = 4
+
 [*.py]
 indent_style = space
 
-[*.{js,pp,go,yml,yaml,tex,toml,sql,sty,json,html,vue,tf,hbs,scss}]
+[*.{js,pp,yml,yaml,tex,toml,sql,sty,json,html,vue,tf,hbs,scss,rb,eyaml}]
 indent_style = space
 indent_size = 2

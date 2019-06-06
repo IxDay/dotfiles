@@ -1,5 +1,6 @@
 .coverage
 .cache
+.idea
 .venv
 .v
 venv
@@ -9,7 +10,6 @@ htmlcov
 .direnv
 .envrc
 .sync.lock
-.idea
 .gradle
 *.iml
 .go

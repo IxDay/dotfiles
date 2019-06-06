@@ -1,5 +1,9 @@
 xrdb -load "$XDG_CONFIG_HOME/X11/xresources"
-xset -b
 
 export MPLAYER_HOME="$XDG_CONFIG_HOME/mplayer"
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+
+
+[[ -f $XDG_CONFIG_HOME/zsh/.zprofile ]] && source $XDG_CONFIG_HOME/zsh/.zprofile
+
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" # not working right now
