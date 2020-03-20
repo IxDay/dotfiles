@@ -12,6 +12,7 @@ Some packages are needed in order to have this working, here is a list:
 - tmux
 - xclip
 - xdg-open
+- tig, direnv, neovim
 
 **To install:**
 
