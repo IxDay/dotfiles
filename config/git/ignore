@@ -16,3 +16,5 @@ htmlcov
 node_modules
 *.sublime-project
 *.sublime-workspace
+.vscode
+__debug_bin
