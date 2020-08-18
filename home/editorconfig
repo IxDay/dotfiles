@@ -13,7 +13,7 @@ indent_style = tab
 indent_style = tab
 indent_size = 4
 
-[*.py]
+[*.{py,java,kt,xml}]
 indent_style = space
 
 [*.{js,pp,yml,yaml,tex,toml,sql,sty,json,html,vue,tf,hbs,scss,rb,eyaml}]
