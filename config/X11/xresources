@@ -92,4 +92,5 @@ URxvt*depth: 32
 URxvt*background: rgba:f900/f900/fa00/f000
 URxvt.internalBorder:  6
 URxvt*.cutchars: "()*,;<>[]{}|`\"'#│'`"
-
+URxvt.iso14755: false
+URxvt.iso14755_52: false
