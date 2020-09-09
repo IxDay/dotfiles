@@ -1,2 +1,5 @@
 config/zsh/.zsh_history*
 config/zsh/.zcompdump*
+config/vscode/globalStorage
+config/vscode/workspaceStorage
+local/share/fonts/.uuid
