@@ -52,12 +52,14 @@ config() {
 	mkdir -p "${XDG_CONFIG_HOME}"
 	for file in $(
 		find "$(pwd)/config" -maxdepth 1 ! -path "$(pwd)/config" \
-			! -name ".*.swp"
+			! -name ".*.swp" ! -name "vscode"
 	)
 	do
 		f="$(basename $file)"
 		ln -sfn "${file}" "${XDG_CONFIG_HOME}/${f}"
 	done
+	mkdir -p "${XDG_CONFIG_HOME}/Code - OSS"
+	ln -sfn "$(pwd)/config/vscode" "${XDG_CONFIG_HOME}/Code - OSS/User"
 }
 
 data() {

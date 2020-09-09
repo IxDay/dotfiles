@@ -1,0 +1,43 @@
+{
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "editor.rulers": [
+        79,
+        120
+    ],
+    "go.autocompleteUnimportedPackages": true,
+    "window.autoDetectColorScheme": true,
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "indent",
+    "go.useLanguageServer": true,
+    "workbench.colorCustomizations": {
+        "sideBar.background": "#f8f8f8",
+        "sideBar.border": "#b8b8b8",
+    },
+    "terminal.integrated.fontWeightBold": "normal",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [{
+            "scope": "storage.type",
+            "settings": {
+                "foreground": "#dc9656"
+            }
+        }, {
+            "scope": "entity.name",
+            "settings": {
+                "foreground": "#dc9656"
+            }
+        }]
+    },
+    "window.zoomLevel": 0,
+    "git.autofetch": true,
+    "vim.handleKeys": {
+      "<C-o>": false,
+      "<C-n>": false,
+      "<C-f>": false,
+      "<C-d>": false,
+      "<C-h>": false
+    },
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "workbench.colorTheme": "Base16 Light Default",
+    // "editor.codeActionsOnSave": null
+}
