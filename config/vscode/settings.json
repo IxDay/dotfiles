@@ -38,6 +38,6 @@
       "<C-h>": false
     },
     "terminal.integrated.shell.linux": "/bin/zsh",
-    "workbench.colorTheme": "Base16 Light Default",
+    "workbench.colorTheme": "Base16 Default Light",
     // "editor.codeActionsOnSave": null
 }
