@@ -7,14 +7,13 @@ this repo contains some config files for my laptop.
 
 Some packages are needed in order to have this working, here is a list:
 
-- rxvt-unicode-256color
+- termite
 - zsh
 - tmux
 - xclip
 - xdg-utils
 - tig, direnv, neovim
 - ttf-droid
-- xorg-xrdb
 
 **To install:**
 

@@ -1,6 +1,4 @@
-xrdb -load "$XDG_CONFIG_HOME/X11/xresources"
-
-export MPLAYER_HOME="$XDG_CONFIG_HOME/mplayer"
+export MPLAYER_HOME="${XDG_CONFIG_HOME}/mplayer"
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
 
