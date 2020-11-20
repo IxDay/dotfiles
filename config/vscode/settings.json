@@ -39,5 +39,6 @@
     },
     "terminal.integrated.shell.linux": "/bin/zsh",
     "workbench.colorTheme": "Base16 Default Light",
+    "editor.renderWhitespace": "all",
     // "editor.codeActionsOnSave": null
 }
