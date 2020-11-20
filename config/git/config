@@ -8,5 +8,6 @@
 [alias]
 	ne = commit --amend --no-edit
 	ae = commit --amend --no-edit --author="${GIT_AUTHOR_NAME} <${GIT_AUTHOR_EMAIL}>"
+	sum = log --oneline -10
 [pull]
 	rebase = true
