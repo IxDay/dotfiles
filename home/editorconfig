@@ -16,6 +16,6 @@ indent_size = 4
 [*.{py,java,kt,xml}]
 indent_style = space
 
-[*.{js,pp,yml,yaml,tex,toml,sql,sty,json,html,vue,tf,hbs,scss,rb,eyaml}]
+[*.{js,pp,yml,yaml,tex,toml,sql,sty,json,html,vue,hcl,tf,hbs,scss,rb,eyaml}]
 indent_style = space
 indent_size = 2
