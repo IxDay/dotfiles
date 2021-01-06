@@ -35,7 +35,8 @@
       "<C-n>": false,
       "<C-f>": false,
       "<C-d>": false,
-      "<C-h>": false
+      "<C-h>": false,
+      "<C-u>": false,
     },
     "terminal.integrated.shell.linux": "/bin/zsh",
     "workbench.colorTheme": "Base16 Default Light",
