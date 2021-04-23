@@ -41,5 +41,10 @@
   {
     "key": "alt+down",
     "command": "workbench.action.decreaseViewSize"
+  },
+  {
+    "key": "ctrl+cmd+=",
+    "command": "wwm.aligncode",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]
