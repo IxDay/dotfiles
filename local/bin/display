@@ -1,8 +1,11 @@
 #!/bin/sh
 
+screen="$(xrandr --query | grep " connected" | grep -v "eDP1" | cut -d' ' -f1)"
+[ -z "$screen" ] && exit 0
+
 case "$1" in
-	"dual") xrandr --output eDP1 --mode 1920x1080 --output DP1 --right-of eDP1 --primary --auto;;
-	"pres") xrandr --output DP1 --primary --auto --output eDP1 --off;;
-	"single") xrandr --output eDP1 --mode 1920x1080 --output DP1 --off;;
-	*) echo "Invalid display!"; exit 1;
+	"dual") xrandr --output eDP1 --mode 1920x1080 --output "$screen" --right-of eDP1 --scale 0.9999x0.9999 --primary --auto;;
+	"pres") xrandr --output "$screen" --primary --auto --output eDP1 --off;;
+	"single") xrandr --output eDP1 --mode 1920x1080 --output "$screen" --off;;
+	*) echo "Invalid display!"; exit 1;;
 esac
