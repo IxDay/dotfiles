@@ -9,6 +9,15 @@
 	ne = commit --amend --no-edit
 	ae = commit --amend --no-edit --author="${GIT_AUTHOR_NAME} <${GIT_AUTHOR_EMAIL}>"
 	sum = log --oneline -10
+	track = git branch -u
+	rb = rev-parse --abbrev-ref --symbolic-full-name @{u}
 	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [pull]
 	rebase = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[submodule]
+	recurse = true
