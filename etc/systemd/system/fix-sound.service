@@ -1,7 +1,7 @@
 [Unit]
 Description=Fix sound: https://askubuntu.com/questions/864608/audio-crackle-through-headphones
-Requires=sys-devices-pci0000:00-0000:00:1f.3-skl_hda_dsp_generic-sound-card0.device
-After=sys-devices-pci0000:00-0000:00:1f.3-skl_hda_dsp_generic-sound-card0.device
+Requires=sys-devices-pci0000:00-0000:00:1f.3-skl_hda_dsp_generic-sound-card0-controlC0.device
+After=sys-devices-pci0000:00-0000:00:1f.3-skl_hda_dsp_generic-sound-card0-controlC0.device
 
 [Service]
 Type=oneshot
