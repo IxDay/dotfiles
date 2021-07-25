@@ -1,8 +1,5 @@
 <device screen="0" driver="dri2">
-	<application name="Firefox" executable="firefox">
-		<option name="vblank_mode" value="0" />
-	</application>
-	<application name="Termite" executable="termite">
+	<application name="Default">
 		<option name="vblank_mode" value="0"/>
 	</application>
 </device>
