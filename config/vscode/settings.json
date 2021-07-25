@@ -28,7 +28,6 @@
             }
         }]
     },
-    "window.zoomLevel": 0,
     "git.autofetch": true,
     "vim.handleKeys": {
       "<C-o>": false,
@@ -41,5 +40,24 @@
     "terminal.integrated.shell.linux": "/bin/zsh",
     "workbench.colorTheme": "Base16 Default Light",
     "editor.renderWhitespace": "all",
+    "debug.chrome.useV3": true,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.direnv": true,
+      "**/node_modules": true,
+      "**/terraform*": true,
+      "**/.terraform*": true,
+      "**/.terraform/**": true,
+    },
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/**": true,
+      "**/.hg/store/**": true,
+      "**/terraform*": true,
+      "**/.terraform*": true,
+      "**/.terraform/**": true,
+    },
+    "go.toolsManagement.autoUpdate": true
     // "editor.codeActionsOnSave": null
 }
