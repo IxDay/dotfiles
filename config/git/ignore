@@ -18,3 +18,5 @@ node_modules
 *.sublime-workspace
 .vscode
 __debug_bin
+.terraform*
+terraform.tfstate*
