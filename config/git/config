@@ -21,3 +21,15 @@
 	required = true
 [submodule]
 	recurse = true
+
+#[url "git@github.com:"]
+#	insteadOf = git://github
+
+[url "https://github"]
+  insteadOf = git://github
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

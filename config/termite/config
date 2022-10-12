@@ -51,7 +51,8 @@ foreground = #3c3b37
 #background = #3f3f3f
 
 # 20% background transparency (requires a compositor)
-background = rgba(255, 255, 255, 0.9)
+# background = rgba(255, 255, 255, 0.9)
+background = rgba(255, 255, 255, 1)
 #background = #ffffff
 #foreground = #fffff
 
