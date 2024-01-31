@@ -4,6 +4,17 @@ set -Ux XDG_CACHE_HOME "$HOME/.cache"
 
 set -Ux ASDF_DATA_DIR "$XDG_DATA_HOME/asdf"
 
+###############################################################################
+#          Everything related to age encryption and my identity flow          #
+#                                                                             #
+# Check the README in $XDG_DATA_HOME/password-store/passage/ for instructions #
+###############################################################################
+alias yk-agent-hang='kill -HUP $(systemctl --user show --property MainPID --value yubikey-agent)'
+set -Ux PASSAGE_AGE "rage"
+set -Ux PASSAGE_DIR "$XDG_DATA_HOME/password-store/passage/store"
+set -Ux PASSAGE_IDENTITIES_FILE "$XDG_DATA_HOME/password-store/passage/identities"
+
+
 set -Ux EDITOR nvim
 set -Ux PAGER less
 
@@ -98,3 +109,4 @@ end
 function tferror
 	echo "$argv[1]" | base64 -d | gunzip
 end
+
