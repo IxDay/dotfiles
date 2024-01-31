@@ -1,0 +1,10 @@
+packages:
+  arch:
+    - alacritty
+    - asdf-vm
+    - direnv
+    # Everything related to age encryption and my identity flow
+    - rage-encryption
+    - yubikey-agent
+    - age-plugin-yubikey
+    - passage-git
