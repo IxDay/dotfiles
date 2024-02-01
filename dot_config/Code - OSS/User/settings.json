@@ -1,0 +1,109 @@
+{
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "editor.rulers": [
+        79,
+        120
+    ],
+    "go.autocompleteUnimportedPackages": true,
+    "window.autoDetectColorScheme": true,
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "indent",
+    "go.useLanguageServer": true,
+    "workbench.colorCustomizations": {
+        "sideBar.background": "#f8f8f8",
+        "sideBar.border": "#b8b8b8",
+    },
+    "terminal.integrated.fontWeightBold": "normal",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [{
+            "scope": "storage.type",
+            "settings": {
+                "foreground": "#dc9656"
+            }
+        }, {
+            "scope": "entity.name",
+            "settings": {
+                "foreground": "#dc9656"
+            }
+        }]
+    },
+    // "git.autofetch": true,
+    "vim.handleKeys": {
+      "<C-o>": false,
+      "<C-n>": false,
+      "<C-f>": false,
+      "<C-d>": false,
+      "<C-k>": false,
+      "<C-h>": false,
+      "<C-u>": false,
+    },
+    "vim.normalModeKeyBindings": [
+      {
+          "before": ["<leader>", "t", "o"],
+          "commands": [
+              "workbench.action.closeOtherEditors"
+          ]
+      },
+    ],
+    "vim.leader": ",",
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "bash",
+        "icon": "terminal-bash",
+      },
+      "zsh": {
+        "path": "/bin/zsh",
+      },
+      "fish": {
+        "path": "fish"
+      },
+      "tmux": {
+        "path": "tmux",
+        "icon": "terminal-tmux"
+      },
+      "pwsh": {
+        "path": "pwsh",
+        "icon": "terminal-powershell"
+      }
+    },
+    "terminal.integrated.defaultProfile.linux": "fish",
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    // "workbench.colorTheme": "Default Light+",
+    "editor.renderWhitespace": "all",
+    "debug.chrome.useV3": true,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.direnv": true,
+      "**/node_modules": true,
+      "**/terraform.tfstate*": true,
+      "**/.terraform*": true,
+      "**/.terraform/**": true,
+      "**/.next/**": true,
+    },
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/**": true,
+      "**/.hg/store/**": true,
+      "**/terraform.tfstate*": true,
+      "**/.terraform*": true,
+      "**/.terraform/**": true,
+      "**/.next/**": true,
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "redhat.telemetry.enabled": true,
+    "files.associations": {
+        "*.hcl": "terraform"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "base16.generator.activatedThemes": [
+      "base16-3024-light",
+      "base16-bright-light",
+      "base16-default-light"
+    ],
+    "workbench.colorTheme": "Base16 Default Light",
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    // "editor.codeActionsOnSave": null
+}

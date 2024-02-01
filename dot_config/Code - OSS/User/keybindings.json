@@ -1,0 +1,55 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0005"
+    }, // move cursor to end of line, sends ctrl+e to terminal
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0001"
+    }, // move cursor to start of line, sends ctrl+e to terminal
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "cursorEnd",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "end",
+    "command": "-cursorEnd",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+shift+up",
+    "command": "workbench.action.terminal.resizePaneUp"
+  },
+  {
+    "key": "alt+shift+down",
+    "command": "workbench.action.terminal.resizePaneDown"
+  },
+  {
+    "key": "alt+up",
+    "command": "workbench.action.increaseViewSize"
+  },
+  {
+    "key": "alt+down",
+    "command": "workbench.action.decreaseViewSize"
+  },
+  {
+    "key": "ctrl+cmd+=",
+    "command": "wwm.aligncode",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "-extension.vim_ctrl+p",
+    "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+  }
+]
