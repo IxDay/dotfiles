@@ -24,10 +24,14 @@ set -Ux KUBECACHEDIR "$XDG_CACHE_HOME/kube"
 set -Ux DOCKER_HOST "unix://$XDG_RUNTIME_DIR/docker.sock"
 
 set -Ux SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/yubikey-agent/yubikey-agent.sock"
+set -Ux GOPATH "$XDG_DATA_HOME/go"
 
-eval "$(/opt/linuxbrew/bin/brew shellenv)"
-source "$(brew --prefix)/opt/asdf/libexec/asdf.fish"
+## asdf install
+fish_add_path "/opt/asdf-vm/bin"
+source "/opt/asdf-vm/asdf.fish"
+
 direnv hook fish | source
+eval "$(/opt/linuxbrew/bin/brew shellenv)"
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
