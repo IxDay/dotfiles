@@ -1,8 +1,6 @@
-{{ if eq .chezmoi.osRelease.name "Arch Linux" -}}
 #!/bin/bash
 
-{{ range .packages.arch -}}
-yay -S --needed --noconfirm {{. | quote}}
-{{ end -}}
+{{ if eq .chezmoi.osRelease.name "Arch Linux" -}}
 
+yay -S --needed --noconfirm {{ join " " .packages.arch }}
 {{ end -}}
