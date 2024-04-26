@@ -31,7 +31,6 @@ fish_add_path "/opt/asdf-vm/bin"
 source "/opt/asdf-vm/asdf.fish"
 
 direnv hook fish | source
-eval "$(/opt/linuxbrew/bin/brew shellenv)"
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
