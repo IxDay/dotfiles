@@ -4,3 +4,13 @@
 
 yay -S --needed --noconfirm {{ join " " .packages.arch }}
 {{ end -}}
+
+# asdf installation and setup
+{{ range $pkg, $versions := .packages.asdf -}}
+asdf plugin-add {{$pkg}}
+{{ range $versions -}}
+asdf install {{$pkg}} {{.}}
+{{ end -}}
+{{ end -}}
+
+asdf direnv setup --shell fish --version latest
