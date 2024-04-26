@@ -98,8 +98,6 @@
     },
     "security.workspace.trust.untrustedFiles": "open",
     "base16.generator.activatedThemes": [
-      "base16-3024-light",
-      "base16-bright-light",
       "base16-default-light"
     ],
     "workbench.colorTheme": "Base16 Default Light",
