@@ -7,9 +7,34 @@ packages:
     zig:
       - "0.12.0"
   arch:
-    - alacritty
-    - asdf-vm
+    - pkgfile
+    - slack-desktop
+    - firefox
+    - docker
+    - docker-compose
+    # editor
+    - nvim
+    - editorconfig-checker
+    - tig
+    # Terminal
     - direnv
+    - alacritty
+    - tmux
+    - direnv
+    - asdf-vm
+    - zoxide
+    - less
+    - fzf
+    - man-db
+    - xclip
+    # Window manager
+    - network-manager
+    - cinnamon
+    - lightdm
+    - lightdm-gtk-greeter
+    - arc-icon-theme
+    - arc-gtk-theme
+    - xdg-utils
     # Everything related to age encryption and my identity flow
     - rage-encryption
     - yubikey-agent
