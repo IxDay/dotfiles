@@ -31,6 +31,7 @@ fish_add_path "/opt/asdf-vm/bin"
 source "/opt/asdf-vm/asdf.fish"
 
 direnv hook fish | source
+zoxide init fish | source
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
@@ -88,11 +89,11 @@ function tmpdir
 end
 
 # https://stackoverflow.com/questions/46698467/is-it-possible-to-wrap-an-existing-function-with-another-function-using-the-same#answer-46699511
-functions -c cd _cd
-function cd --wraps _cd
+#functions -c cd _cd
+function cd --wraps z
 	! count $argv > /dev/null && test -n "$PROJECT" && set argv "$PROJECT"
 
-	_cd $argv
+	z $argv
 	return $status
 end
 
