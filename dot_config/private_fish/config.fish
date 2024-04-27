@@ -12,10 +12,10 @@ set -Ux ASDF_DATA_DIR "$XDG_DATA_HOME/asdf"
 # Check the README in $XDG_DATA_HOME/password-store/passage/ for instructions #
 ###############################################################################
 alias yk-agent-hang='kill -HUP $(systemctl --user show --property MainPID --value yubikey-agent)'
+set -Ux SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/yubikey-agent/yubikey-agent.sock"
 set -Ux PASSAGE_AGE "rage"
 set -Ux PASSAGE_DIR "$XDG_DATA_HOME/password-store/passage/store"
 set -Ux PASSAGE_IDENTITIES_FILE "$XDG_DATA_HOME/password-store/passage/identities"
-
 
 set -Ux EDITOR nvim
 set -Ux PAGER less
@@ -23,9 +23,6 @@ set -Ux PAGER less
 set -Ux KUBECONFIG   "$XDG_CONFIG_HOME/kube/config"
 set -Ux KUBECACHEDIR "$XDG_CACHE_HOME/kube"
 
-set -Ux DOCKER_HOST "unix://$XDG_RUNTIME_DIR/docker.sock"
-
-set -Ux SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/yubikey-agent/yubikey-agent.sock"
 set -Ux GOPATH "$XDG_DATA_HOME/go"
 
 ## asdf install
@@ -56,6 +53,7 @@ alias sshi='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null'
 alias sshp='ssh -o PreferredAuthentications=keyboard-interactive,password -o PubkeyAuthentication=no'
 alias scpi='/usr/bin/scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null'
 
+set -Ux DOCKER_HOST "unix:///var/run/docker.sock"
 alias dockerr='docker run --rm -ti'
 alias dockerip='docker inspect -f "{{.NetworkSettings.IPAddress}}"'
 alias dockerrm='docker rm $(docker ps -qa)'
