@@ -35,8 +35,12 @@ packages:
     - arc-icon-theme
     - arc-gtk-theme
     - xdg-utils
+    - blueberry
+    - gnome-bluetooth-3.0
+    - gtk2
     # Everything related to age encryption and my identity flow
     - rage-encryption
     - yubikey-agent
     - age-plugin-yubikey
     - passage-git
+    - yubikey-manager
