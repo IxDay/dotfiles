@@ -10,12 +10,21 @@ packages:
     - pkgfile
     - slack-desktop
     - firefox
-    - docker
-    - docker-compose
-    # editor
+    - dxvk-bin
+    - wine
+    - vulkan-intel
+    - lib32-vulkan-intel
+    - vulkan-mesa-layers
+    - lib32-vulkan-mesa-layers
+    - vulkan-icd-loader
+    - lib32-vulkan-icd-loader
+    # Development
     - nvim
     - editorconfig-checker
     - tig
+    - gh-cli
+    - docker
+    - docker-compose
     # Terminal
     - direnv
     - alacritty
