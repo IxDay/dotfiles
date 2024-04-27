@@ -13,6 +13,9 @@
 ! systemctl --quiet --user is-enabled yubikey-agent
 	systemctl --now --user enable yubikey-agent
 
+# also you may need to check some commands to get the PIN to work, namely:
+# pinentry-gtk-2
+
 ############                     Docker setup                      ############
 
 ! test -f /etc/systemd/system/multi-user.target.wants/docker.service &&
