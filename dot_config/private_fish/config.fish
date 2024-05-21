@@ -2,6 +2,10 @@ set -Ux XDG_CONFIG_HOME "$HOME/.config"
 set -Ux XDG_DATA_HOME "$HOME/.local/share"
 set -Ux XDG_CACHE_HOME "$HOME/.cache"
 
+set -Ux LANG "en_US.UTF-8"
+set -Ux LANGUAGE "en_US"
+set -Ux LC_ALL "C"
+
 fish_add_path "$HOME/.local/bin"
 
 set -Ux ASDF_DATA_DIR "$XDG_DATA_HOME/asdf"
