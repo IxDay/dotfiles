@@ -102,6 +102,14 @@
     ],
     "workbench.colorTheme": "Base16 Default Light",
     "editor.minimap.enabled": false,
+    "zig.path": "zig",
+    "zig.initialSetupDone": true,
+    "zig.zls.path": "/home/max/.config/Code - OSS/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
+    "[zig]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "ziglang.vscode-zig",
+      "files.eol": "\n"
+    },
     "editor.lineNumbers": "relative",
     // "editor.codeActionsOnSave": null
 }
