@@ -21,3 +21,5 @@ __debug_bin
 .terraform*
 terraform.tfstate*
 gke_gcloud_auth_plugin_cache
+zig-cache
+zig-out
