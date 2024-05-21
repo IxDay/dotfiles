@@ -102,6 +102,6 @@
     ],
     "workbench.colorTheme": "Base16 Default Light",
     "editor.minimap.enabled": false,
-    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.lineNumbers": "relative",
     // "editor.codeActionsOnSave": null
 }
