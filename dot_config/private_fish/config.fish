@@ -66,6 +66,7 @@ alias dockerrmv='docker volume rm $(docker volume ls -qf dangling=true)'
 alias dockerps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}"'
 
 alias fixtmux='tmux set-option status on'
+alias tmux='tmux -u'
 
 alias mcli='mcli --config-dir=$XDG_CONFIG_HOME/minio'
 
