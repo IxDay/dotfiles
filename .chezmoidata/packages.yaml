@@ -47,6 +47,8 @@ packages:
     - blueberry
     - gnome-bluetooth-3.0
     - gtk2
+    - gtk-engine-murrine
+    - gnome-themes-extra
     # Everything related to age encryption and my identity flow
     - rage-encryption
     - yubikey-agent
