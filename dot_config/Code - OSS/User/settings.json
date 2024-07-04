@@ -110,6 +110,7 @@
       "editor.defaultFormatter": "ziglang.vscode-zig",
       "files.eol": "\n"
     },
+    "workbench.preferredLightColorTheme": "Base16 Default Light",
     "editor.lineNumbers": "relative",
     // "editor.codeActionsOnSave": null
 }
