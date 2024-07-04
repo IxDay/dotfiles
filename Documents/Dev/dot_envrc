@@ -1,2 +1,4 @@
 use asdf
 
+export PROJECT=$(pwd)
+
