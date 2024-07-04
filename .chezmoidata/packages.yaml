@@ -1,4 +1,7 @@
 packages:
+  fish:
+    # https://github.com/junegunn/fzf.vim/issues/358#issuecomment-769589975
+    - PatrickF1/fzf.fish
   asdf:
     direnv:
       - "2.34.0"
@@ -36,6 +39,9 @@ packages:
     - fzf
     - man-db
     - xclip
+    - bat
+    - fd
+    - fisher
     # Window manager
     - network-manager
     - cinnamon

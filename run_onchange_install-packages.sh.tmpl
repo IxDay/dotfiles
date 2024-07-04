@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/fish
 
 {{ if eq .chezmoi.osRelease.name "Arch Linux" -}}
 
@@ -14,3 +14,6 @@ asdf install {{$pkg}} {{.}}
 {{ end -}}
 
 asdf direnv setup --shell fish --version latest
+
+# fisher setup
+fisher install  {{ join " " .packages.fish }}
