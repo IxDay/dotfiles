@@ -14,6 +14,7 @@ asdf install {{$pkg}} {{.}}
 {{ end -}}
 
 asdf direnv setup --shell fish --version latest
+asdf global direnv 2.34.0
 
 # fisher setup
 fisher install  {{ join " " .packages.fish }}

@@ -33,7 +33,6 @@ set -Ux GOPATH "$XDG_DATA_HOME/go"
 fish_add_path "/opt/asdf-vm/bin"
 source "/opt/asdf-vm/asdf.fish"
 
-direnv hook fish | source
 zoxide init fish | source
 
 if status is-interactive
