@@ -2,6 +2,12 @@
 
 {{ if eq .chezmoi.osRelease.name "Arch Linux" -}}
 
+# enable multilib
+if ! grep -q "^\[multilib\]" /etc/pacman.conf
+	sudo sed -i '/\[multilib]/{s/^#//;n;s/^#//}' /etc/pacman.conf
+	yay -Syu --noconfirm
+end
+
 yay -S --needed --noconfirm {{ join " " .packages.arch }}
 {{ end -}}
 
