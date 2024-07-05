@@ -13,6 +13,9 @@
 ! systemctl --quiet --user is-enabled yubikey-agent
 	systemctl --now --user enable yubikey-agent
 
+! systemctl --quiet --user is-enabled ssh-agent
+	systemctl --now --user enable ssh-agent
+
 # also you may need to check some commands to get the PIN to work, namely:
 # pinentry-gtk-2
 
