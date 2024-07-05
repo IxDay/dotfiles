@@ -28,6 +28,10 @@ packages:
     - gh-cli
     - docker
     - docker-compose
+    # Network
+    - socat
+    - net-tools
+    - bind
     # Terminal
     - direnv
     - alacritty
