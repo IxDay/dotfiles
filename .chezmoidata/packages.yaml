@@ -59,6 +59,11 @@ packages:
     - gtk2
     - gtk-engine-murrine
     - gnome-themes-extra
+    - evince
+    # printer
+    - brother-dcpl2530dw
+    - cups
+    - system-config-printer
     # Everything related to age encryption and my identity flow
     - rage-encryption
     - yubikey-agent
