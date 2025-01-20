@@ -1,0 +1,22 @@
+packages:
+  darwin:
+    brews:
+    - 'git'
+    - 'vim'
+    - 'mise'
+    - 'tig'
+    - 'colima'
+    - 'docker'
+    # fish/fisher/fzf
+    - 'fish'
+    - 'fisher'
+    - 'fzf'
+    - 'fd'
+    - 'bat'
+    - 'zoxide'
+    # languages
+    - 'zig'
+    - 'ruby'
+    - 'rust'
+    - 'go'
+    casks: []
