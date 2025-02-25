@@ -1,4 +1,80 @@
-syntax on
+" https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
+syntax enable
+
+let mapleader = ","
+let g:mapleader = ","
+
+" Set 7 lines to the cursor - when moving vertically using j/k
+set so=7
+
+"Always show current position
+set ruler
+
+" Underline current line
+set cul
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+" Toggle paste mode on and off
+map <leader>pp :setlocal paste!<cr>:startinsert<cr>
+
+" Toggle line numbers and
+map <leader>ps :setlocal relativenumber!<cr>:setlocal number!<cr>
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+
+" Display relative line number
+set relativenumber
+set number
+
+" Do not replace clipboard when pasting selection
+vnoremap <silent> p "_dP
+
+" Useful mappings for managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>te :tabedit
+
+" Highlight search results
+set hlsearch
+" Visual mode pressing # searches for the current selection
+vnoremap <silent> # :call VisualSelection('b')<cr>
+vnoremap <silent> * :call VisualSelection('replace')<cr>
+
+function! VisualSelection(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'replace'
+        call feedkeys(":%s" . '/'. l:pattern . "//g\<left>\<left>")
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
 
 " https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim#answer-234578
 filetype plugin indent on
