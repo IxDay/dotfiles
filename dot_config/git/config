@@ -5,9 +5,10 @@
 [pull]
     rebase = true
 [alias]
-    sum = log --format='%C(auto) %h %<(50,trunc)%s %Cblue< %G? %<(20,trunc)%GS>%C(auto)%d'
+    sum = log -10 --format='%C(auto) %h %<(50,trunc)%s %Cblue< %G? %<(20,trunc)%GS>%C(auto)%d'
     ne = commit --amend --no-edit
     alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+    date = log -1 --pretty=format:'%ad' --date=format:'%m-%d-%Y %H:%M:%S'
     track = branch -u
 [gpg]
     format = ssh
@@ -15,3 +16,5 @@
     allowedSignersFile = ~/.config/git/allowed_signers
 [commit]
     gpgsign = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
