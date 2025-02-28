@@ -2,11 +2,14 @@ set -Ux XDG_CONFIG_HOME "$HOME/.config"
 set -Ux XDG_DATA_HOME "$HOME/.local/share"
 set -Ux GOPATH "$HOME/.local/share/go"
 set -Ux COLIMA_HOME "$HOME/.config/colima"
+set -Ux DOCKER_CONFIG "$HOME/.config/docker"
 
 set -Ux BAT_THEME "ansi"
 
 # https://stackoverflow.com/questions/26198926/why-does-lesshst-keep-showing-up-in-my
 set -Ux LESSHISTFILE -
+
+set -U fish_greeting ""
 
 fish_add_path "$HOME/.local/bin"
 
@@ -16,7 +19,6 @@ zoxide init fish | source
 set fzf_fd_opts --hidden --no-ignore --exclude '.git' --exclude 'node_modules' --exclude '.cache' --exclude 'Library' --exclude 'Applications'
 fzf_configure_bindings --directory=\cf
 
-alias k='kubectl'
 function cd --wraps z
     ! count $argv > /dev/null && test -n "$PROJECT" && set argv "$PROJECT"
     z $argv
@@ -32,6 +34,8 @@ function tmpdir
 	mktemp $params | tee /dev/stderr
 end
 
+
+alias k='kubectl'
 function kdebug
     ! count $argv > /dev/null && set argv "alpine:3.20"
 	kubectl run --stdin --tty --rm debug --image="$argv[1]" --restart Never
@@ -42,6 +46,11 @@ function kns
 	count $argv > /dev/null \
 		&& kubectl config set-context --current --namespace "$argv[1]" \
 		|| kubectl get ns
+end
+
+function kx --wraps kubectx
+	KUBECTX_IGNORE_FZF=1 kubectx $argv
+	return $status
 end
 
 if status is-interactive
