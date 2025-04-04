@@ -49,12 +49,5 @@
     },
     "go.testFlags": ["-v"],
     "terminal.integrated.fontFamily": "MesloLGS NF",
-    "colorize.include": [
-        "**/*.go",
-        "**/*.css",
-        "**/*.scss",
-        "**/*.sass",
-        "**/*.less",
-        "**/*.styl"
-    ],
+    "editor.defaultColorDecorators": "always",
 }
