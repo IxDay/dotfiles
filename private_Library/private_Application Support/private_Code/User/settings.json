@@ -1,0 +1,60 @@
+{
+    "workbench.colorTheme": "Base16 Default Light",
+    "workbench.colorCustomizations": {
+        "sideBar.background": "#f9f9f9",
+    },
+    "base16.generator.activatedThemes": [
+        "base16-default-dark",
+        "base16-default-light"
+    ],
+    "search.useIgnoreFiles": false,
+    "editor.renderWhitespace": "all", 
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "indent",
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "vim.normalModeKeyBindings": [
+      {
+          "before": ["<leader>", "t", "o"],
+          "commands": [
+              "workbench.action.closeOtherEditors"
+          ]
+      },
+    ],
+    "vim.leader": ",",
+    "editor.accessibilitySupport": "off", // Very F@#@ing IMPORTANT 
+    "terminal.integrated.inheritEnv": false,
+    "editor.insertSpaces": true,
+    "rubyLsp.enabledFeatures": {
+        "codeActions": true,
+        "diagnostics": true,
+        "documentHighlights": true,
+        "documentLink": true,
+        "documentSymbols": true,
+        "foldingRanges": true,
+        "formatting": true,
+        "hover": true,
+        "inlayHint": true,
+        "onTypeFormatting": true,
+        "selectionRanges": true,
+        "semanticHighlighting": true,
+        "completion": true,
+        "codeLens": true,
+        "definition": true,
+        "workspaceSymbol": true,
+        "signatureHelp": true,
+        "typeHierarchy": true
+    },
+    "go.testFlags": ["-v"],
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "colorize.include": [
+        "**/*.go",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.less",
+        "**/*.styl"
+    ],
+}
