@@ -1,6 +1,7 @@
 packages:
   darwin:
     brews:
+    - 'editorconfig'
     - 'git'
     - 'vim'
     - 'mise'
