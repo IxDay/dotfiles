@@ -6,7 +6,13 @@ set -Ux DOCKER_CONFIG "$HOME/.config/docker"
 
 set -Ux BAT_THEME "ansi"
 
-alias server='python3 -m http.server 9000'
+alias tlscert='openssl x509 -text -noout'
+alias activate='xattr -d com.apple.quarantine'
+
+function server
+    ! count $argv > /dev/null && set argv "9000"
+    python3 -m http.server $argv[1]
+end
 
 # https://stackoverflow.com/questions/26198926/why-does-lesshst-keep-showing-up-in-my
 set -Ux LESSHISTFILE -
