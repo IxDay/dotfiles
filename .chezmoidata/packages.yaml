@@ -7,6 +7,8 @@ packages:
     - 'tig'
     - 'colima'
     - 'docker'
+    - 'docker-compose'
+    - 'docker-buildx'
     # fish/fisher/fzf
     - 'fish'
     - 'fisher'
