@@ -22,6 +22,12 @@ packages:
     - 'ruby'
     - 'rust'
     - 'go'
+    # passage, it needs to be installed from github
+    - 'gnu-getopt'
+    - 'yubikey-agent' # brew services start yubikey-agent;
+    - 'rage'
+    - 'age-plugin-yubikey'
+
     casks: []
   fish:
     - PatrickF1/fzf.fish
