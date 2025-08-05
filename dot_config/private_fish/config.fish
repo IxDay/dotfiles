@@ -36,6 +36,10 @@ function cd --wraps z
     return $status
 end
 
+function gc
+    cd (clone-and-switch -ME $argv)
+end
+
 # https://stackoverflow.com/questions/31396985/why-is-mktemp-on-os-x-broken-with-a-command-that-worked-on-linux
 function tmpdir
 	set params -d
