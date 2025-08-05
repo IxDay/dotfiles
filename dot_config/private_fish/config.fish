@@ -14,6 +14,9 @@ function server
     python3 -m http.server $argv[1]
 end
 
+# then run `verify /full/path/to/binary`
+alias verify='xattr -d com.apple.quarantine'
+
 # https://stackoverflow.com/questions/26198926/why-does-lesshst-keep-showing-up-in-my
 set -Ux LESSHISTFILE -
 
