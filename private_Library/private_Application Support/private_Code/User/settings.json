@@ -50,4 +50,5 @@
     "go.testFlags": ["-v"],
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "editor.defaultColorDecorators": "always",
+    "editor.lineNumbers": "relative",
 }
