@@ -23,3 +23,6 @@ packages:
     - 'rust'
     - 'go'
     casks: []
+  fish:
+    - PatrickF1/fzf.fish
+    - ilancosman/tide@v6
