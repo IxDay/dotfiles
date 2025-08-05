@@ -44,6 +44,12 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 set relativenumber
 set number
 
+" Display whitespaces https://stackoverflow.com/questions/1675688/make-vim-show-all-white-spaces-as-a-character
+set listchars=tab:→·,space:.
+set list
+hi SpecialKey ctermfg=7 guifg=gray
+
+
 " Do not replace clipboard when pasting selection
 vnoremap <silent> p "_dP
 
@@ -83,6 +89,6 @@ set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
-set expandtab
+"set expandtab
 
 set viminfo+=n~/.local/state/vim
