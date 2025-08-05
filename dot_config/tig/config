@@ -3,4 +3,5 @@ set main-view-id = yes
 bind main R <git rebase -i %(commit)^
 bind diff R <git rebase -i %(commit)^
 bind main c !git checkout %(commit)
+bind main C !git cherry-pick %(commit)
 bind main S !git revert %(commit)
