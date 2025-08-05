@@ -61,8 +61,11 @@ map <leader>te :tabedit
 
 " Highlight search results
 set hlsearch
+
 " Visual mode pressing # searches for the current selection
 vnoremap <silent> # :call VisualSelection('b')<cr>
+
+" Visual mode pressing * replaces all occurences with input
 vnoremap <silent> * :call VisualSelection('replace')<cr>
 
 function! VisualSelection(direction) range
@@ -81,6 +84,9 @@ function! VisualSelection(direction) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+" https://stackoverflow.com/questions/41798130/copy-paste-in-iterm-vim#answer-41798262
+set clipboard=unnamed
 
 " https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim#answer-234578
 filetype plugin indent on
