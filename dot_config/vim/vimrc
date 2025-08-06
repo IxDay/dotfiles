@@ -63,7 +63,7 @@ map <leader>te :tabedit
 set hlsearch
 
 " Visual mode pressing # searches for the current selection
-vnoremap <silent> # :call VisualSelection('b')<cr>
+vnoremap <silent> # :call VisualSelection('search')<cr>
 
 " Visual mode pressing * replaces all occurences with input
 vnoremap <silent> * :call VisualSelection('replace')<cr>
@@ -75,7 +75,7 @@ function! VisualSelection(direction) range
     let l:pattern = escape(@", '\\/.*$^~[]')
     let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'b'
+    if a:direction == 'search'
         execute "normal ?" . l:pattern . "^M"
     elseif a:direction == 'replace'
         call feedkeys(":%s" . '/'. l:pattern . "//g\<left>\<left>")
