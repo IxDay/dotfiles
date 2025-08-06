@@ -31,7 +31,7 @@ set noswapfile
 map <leader>pp :setlocal paste!<cr>:startinsert<cr>
 
 " Toggle line numbers and
-map <leader>ps :setlocal relativenumber!<cr>:setlocal number!<cr>
+map <leader>ps :setlocal relativenumber!<cr>:setlocal number!<cr>:setlocal list!<cr>
 
 " Fast saving
 nmap <leader>w :w!<cr>
