@@ -95,6 +95,29 @@ set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
-"set expandtab
+set expandtab
+
+" Set tab preferences based on file type
+" Group autocmds to prevent duplication
+augroup FileTypeSettings
+    autocmd!
+    " Web development - 2 spaces
+    autocmd FileType html,css,scss,javascript,typescript,json,yaml,xml setlocal ts=2 sw=2 et
+
+    " Python - 4 spaces (PEP 8)
+    autocmd FileType python setlocal ts=4 sw=4 et
+
+    " Go - tabs (Go convention)
+    autocmd FileType go setlocal ts=4 sw=4 noet
+
+    " C/C++ - 4 spaces
+    autocmd FileType c,cpp setlocal ts=4 sw=4 et
+
+    " Makefiles - must use tabs
+    autocmd FileType make setlocal ts=8 sw=8 noet
+
+    " Shell scripts - 2 spaces
+    autocmd FileType sh,bash,zsh setlocal ts=2 sw=2 et
+augroup END
 
 set viminfo+=n~/.local/state/vim
