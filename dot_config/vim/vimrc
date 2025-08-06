@@ -88,6 +88,9 @@ endfunction
 " https://stackoverflow.com/questions/41798130/copy-paste-in-iterm-vim#answer-41798262
 set clipboard=unnamed
 
+" Remove trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim#answer-234578
 filetype plugin indent on
 " show existing tab with 4 spaces width
