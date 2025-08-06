@@ -10,6 +10,7 @@
     alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
     date = log -1 --pretty=format:'%ad' --date=format:'%m-%d-%Y %H:%M:%S'
     track = branch -u
+    sub-init = submodule update --init --recursive
 [gpg]
     format = ssh
 [gpg "ssh"]
