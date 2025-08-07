@@ -36,7 +36,7 @@ module Rakefile
 
     file File.join(repo, "mise.toml") => [repo] do |t|
       write t.name, MISE_TOML
-      run %W[mise trust --quiet]
+      run %W[mise -C #{repo} trust --quiet]
     end
 
     task "mise" => [File.join(repo, "mise.toml")]
@@ -132,7 +132,7 @@ def options()
   when 0
     STDERR.puts "You must at least specify a repository to clone.\n\n#{parser}"
     exit 2
-  when 1 
+  when 1
     options[:repo] = ARGV[0]
   when 2
     options[:repo], options[:path] = ARGV[0], ARGV[1]
@@ -144,8 +144,8 @@ def options()
 end
 
 def main(repo:, path:, branch:, mise:, editorconfig:)
-  name = "https://github.com/#{repo}" if repo.match? %r{\A[\w.-]+\/[\w.-]+\z}
-  repo = Repo.new name, path, branch
+  repo = "https://github.com/#{repo}" if repo.match? %r{\A[\w.-]+\/[\w.-]+\z}
+  repo = Repo.new repo, path, branch
   repo.with_editor_config if editorconfig
   repo.with_mise if mise
   repo.generate
