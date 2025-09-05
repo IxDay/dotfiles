@@ -6,12 +6,17 @@ packages:
     - 'vim'
     - 'mise'
     - 'tig'
+    - 'go-task'
+    - 'wget'
+    - 'mkcert'
+    - 'dyff'
     - 'colima'
     - 'docker'
     - 'docker-compose'
     - 'docker-buildx'
     # fish/fisher/fzf
-    - 'fish'
+    - 'fish' # echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+    - 'font-meslo-lg-nerd-font'
     - 'fisher'
     - 'fzf'
     - 'fd'
