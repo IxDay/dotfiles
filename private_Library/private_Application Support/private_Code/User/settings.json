@@ -8,7 +8,7 @@
         "base16-default-light"
     ],
     "search.useIgnoreFiles": false,
-    "editor.renderWhitespace": "all", 
+    "editor.renderWhitespace": "all",
     "editor.wordWrap": "on",
     "editor.wrappingIndent": "indent",
     "editor.rulers": [
@@ -24,8 +24,7 @@
       },
     ],
     "vim.leader": ",",
-    "editor.accessibilitySupport": "off", // Very F@#@ing IMPORTANT 
-    "terminal.integrated.inheritEnv": false,
+    "editor.accessibilitySupport": "off", // Very F@#@ing IMPORTANT
     "editor.insertSpaces": true,
     "rubyLsp.enabledFeatures": {
         "codeActions": true,
@@ -48,7 +47,14 @@
         "typeHierarchy": true
     },
     "go.testFlags": ["-v"],
-    "terminal.integrated.fontFamily": "MesloLGS NF",
     "editor.defaultColorDecorators": "always",
     "editor.lineNumbers": "relative",
+
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.defaultProfile.osx": "fish",
+
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
 }
