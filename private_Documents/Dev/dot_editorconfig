@@ -9,11 +9,11 @@ trim_trailing_whitespace = true
 indent_size = 4
 indent_style = tab
 
-[*.{js,yml,yaml,toml,sql,html,hcl,tf,rb,rake}]
+[*.{js,yml,yaml,toml,sql,html,hcl,tf,rb,rake,json,cr}]
 indent_style = space
 indent_size = 2
 
-[*.{py,rs}]
+[*.{py,rs,ts,jsonnet}]
 indent_style = space
 indent_size = 4
 

@@ -49,6 +49,12 @@ set listchars=tab:→·,space:.
 set list
 hi SpecialKey ctermfg=7 guifg=gray
 
+" cd to current file's directory
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
+" cd back to previous directory
+nnoremap <leader>cb :cd -<CR>:pwd<CR>
+
 
 " Do not replace clipboard when pasting selection
 vnoremap <silent> p "_dP

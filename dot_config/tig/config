@@ -2,6 +2,7 @@ set main-view-id = yes
 
 bind main R <git rebase -i %(commit)^
 bind diff R <git rebase -i %(commit)^
+bind main Y +sh -c "printf '%.7s' '%(commit)' | pbcopy && printf 'copied short sha: %.7s' '%(commit)'"
 bind main c !git checkout %(commit)
 bind main C !git cherry-pick %(commit)
 bind main S !git revert %(commit)

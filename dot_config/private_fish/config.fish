@@ -28,7 +28,7 @@ mise activate | source
 zoxide init fish | source
 
 set fzf_fd_opts --hidden --no-ignore --exclude '.git' --exclude 'node_modules' --exclude '.cache' --exclude 'Library' --exclude 'Applications'
-fzf_configure_bindings --directory=\cf
+fzf_configure_bindings --directory=\cf --processes=\cp
 
 function cd --wraps z
     ! count $argv > /dev/null && test -n "$PROJECT" && set argv "$PROJECT"
@@ -52,7 +52,7 @@ end
 
 alias k='kubectl'
 function kdebug
-    ! count $argv > /dev/null && set argv "alpine:3.20"
+    ! count $argv > /dev/null && set argv "dwdraju/alpine-curl-jq"
 	kubectl run --stdin --tty --rm debug --image="$argv[1]" --restart Never
 	return $status
 end
