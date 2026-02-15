@@ -80,75 +80,46 @@ class Repo
   def generate = @task.invoke
 end
 
-def options()
-  # Default options of our CLI
-  options = {
-    :branch => nil,
-    :path => nil,
-    :repo => nil,
-    :mise => false,
-    :editorconfig => false,
-  }
+Clap.run("clone-and-switch") do |c|
+  c.about "Clone and switch to a specific branch one or more repositories"
 
-  parser = OptionParser.new do |opts|
-    program_name = File.basename __FILE__
-    # Banner has been heavily inspired by the jq --help output
-    opts.banner = <<~EOF
-      #{program_name} - clone and switch to a specific branch one or more repositories
-
-      Usage: #{program_name} [options] <repo> [<dir>]
-
-      This command will clone one or more repos as bare and create a worktree
-      for a specified branch if provided.
-
-      Example:
-
-        $ #{program_name} --branch my-custom-branch some_org/some_repo specific_directory
-
-      Command options:
-    EOF
-    opts.on_tail("-h", "--help", "-H", "Display this help message.") do
-      STDERR.puts opts
-      exit
-    end
-    [
-      ["--branch <name>", "-B",
-        "Name of the branch you want to checkout.",
-        lambda { |v| options[:branch] = v }
-      ],
-      ["--mise", "-M",
-        "Initiate a mise file (https://mise.jdx.dev/) in directory root.",
-        lambda { |_| options[:mise] = true }
-      ],
-      ["--editorconfig", "-E",
-        "Initiate an editorconfig file (https://editorconfig.org/) in directory root.",
-        lambda { |_| options[:editorconfig] = true }
-      ],
-    ].each { |args| opts.on(*args) }
+  c.arg "repo" do |a|
+    a.positional
+    a.required
+    a.help "Repository to clone (org/repo or full URL)"
   end
 
-  parser.parse!(ARGV)
-  case ARGV.length
-  when 0
-    STDERR.puts "You must at least specify a repository to clone.\n\n#{parser}"
-    exit 2
-  when 1
-    options[:repo] = ARGV[0]
-  when 2
-    options[:repo], options[:path] = ARGV[0], ARGV[1]
-  else
-    STDERR.puts "Too many arguments.\n\n#{parser}"
-    exit 2
+  c.arg "dir" do |a|
+    a.positional
+    a.help "Target directory"
   end
-  options
-end
 
-def main(repo:, path:, branch:, mise:, editorconfig:)
-  repo = "https://github.com/#{repo}" if repo.match? %r{\A[\w.-]+\/[\w.-]+\z}
-  repo = Repo.new repo, path, branch
-  repo.with_editor_config if editorconfig
-  repo.with_mise if mise
-  repo.generate
-end
+  c.arg "branch" do |a|
+    a.short "B"
+    a.long "branch"
+    a.help "Name of the branch you want to checkout"
+  end
 
-main(**options)
+  c.arg "mise" do |a|
+    a.short "M"
+    a.long "mise"
+    a.flag
+    a.help "Initiate a mise file (https://mise.jdx.dev/) in directory root"
+  end
+
+  c.arg "editorconfig" do |a|
+    a.short "E"
+    a.long "editorconfig"
+    a.flag
+    a.help "Initiate an editorconfig file (https://editorconfig.org/) in directory root"
+  end
+
+  c.action do |matches|
+    name = matches.get_one("repo")
+    name = "https://github.com/#{name}" if name.match? %r{\A[\w.-]+\/[\w.-]+\z}
+    repo = Repo.new name, matches.get_one("dir"), matches.get_one("branch")
+    repo.with_editor_config if matches.flag?("editorconfig")
+    repo.with_mise if matches.flag?("mise")
+    repo.generate
+  end
+end
