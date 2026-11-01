@@ -1,0 +1,21 @@
+# Shared by every Cargo project under ~/Documents/Dev/rust. mise merges
+# this file with each repo's own mise.toml; a repo that sets the same key
+# wins.
+
+[tools]
+sccache = "latest"
+
+[env]
+# One compile cache for all repos: a dependency built in one repo is a
+# cache hit in the others. It lives in ~/Library/Caches/Mozilla.sccache.
+RUSTC_WRAPPER = "sccache"
+SCCACHE_CACHE_SIZE = "30G"
+# sccache cannot cache an incremental crate, and target/debug/incremental
+# is often a third of a target dir. Off, so workspace crates hit the
+# cache too.
+CARGO_INCREMENTAL = "0"
+# Debug info is most of the size of target/debug/deps. Keep line tables
+# (backtraces and panics name file:line), drop variable info. Set
+# `debug = true` in a repo's Cargo.toml to step through with lldb.
+CARGO_PROFILE_DEV_DEBUG = "line-tables-only"
+CARGO_PROFILE_TEST_DEBUG = "line-tables-only"
