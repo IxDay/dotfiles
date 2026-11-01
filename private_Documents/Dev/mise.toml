@@ -1,9 +1,24 @@
 [env]
 PROJECT = "{{config_root}}"
+# Share one Yarn zip cache across all worktrees.
+YARN_ENABLE_GLOBAL_CACHE = "true"
 
 [tools]
 "aqua:IxDay/mruby" = "3.2.0"
 rg = "15"
+ruby = "latest"
 sd = "1"
 tokei = "14"
+
+[tasks."claude:commit"]
+run = "claude --dangerously-skip-permissions --print 'commit changes, do not co-author or add banner to the message, also use conventional commit format with a descriptive body'"
+dir = "{{cwd}}"
+
+[tasks."claude:commit:staged"]
+run = "claude --dangerously-skip-permissions --print 'commit staged changes, do not co-author or add banner to the message, also use conventional commit format with a descriptive body'"
+dir = "{{cwd}}"
+
+[tasks.claude]
+run = "claude --dangerously-skip-permissions 'when commiting changes, do not co-author or add banner to the message, also use conventional commit format with a descriptive body'"
+dir = "{{cwd}}"
 
